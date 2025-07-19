@@ -29,12 +29,14 @@
         --text-secondary: #475569;
       }
       body {
-        font-family: "Public Sans", sans-serif;
+        font-family: "Public Sans", "Noto Sans", sans-serif;
       }
     </style>
   </head>
-  <body class="bg-[var(--background-color)]" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+  <body class="bg-[var(--background-color)] leading-relaxed">
+    <div
+      class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
+    >
       <div class="layout-container flex h-full grow flex-col">
         <div class="px-4 sm:px-6 lg:px-8 flex flex-1 justify-center py-6">
           <div class="layout-content-container flex w-full max-w-4xl flex-col flex-1 gap-6">
@@ -51,7 +53,7 @@
                     Jodhpur
                   </p>
                 </div>
-                <div class="grid grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-2 text-sm text-[var(--text-secondary)]">
+                <div class="flex flex-col gap-2 text-sm text-[var(--text-secondary)]">
                   <div class="flex items-center gap-2">
                     <span class="material-icons text-lg text-[var(--secondary-color)]">phone</span>
                     <span>+91-9328576258</span>
@@ -91,7 +93,8 @@
                     <tr>
                       <th class="py-1 pr-2 font-semibold">Institution</th>
                       <th class="py-1 px-2 font-semibold">Degree/Class</th>
-                      <th class="py-1 pl-2 font-semibold text-right">Date/Percentage</th>
+                      <th class="py-1 pl-2 font-semibold text-right">Date</th>
+                      <th class="py-1 pl-2 font-semibold text-right">Percentage</th>
                     </tr>
                   </thead>
                   <tbody class="text-[var(--text-primary)]">
@@ -99,16 +102,19 @@
                       <td class="py-1 pr-2">IIT Jodhpur</td>
                       <td class="py-1 px-2 text-[var(--text-secondary)]">B.Tech in AI &amp; Data Science</td>
                       <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">May 2025</td>
+                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]"></td>
                     </tr>
                     <tr class="border-t border-slate-200">
                       <td class="py-1 pr-2">JHASV, Surat</td>
                       <td class="py-1 px-2 text-[var(--text-secondary)]">Class 12</td>
-                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">93% (May 2021)</td>
+                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">May 2021</td>
+                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">93%</td>
                     </tr>
                     <tr class="border-t border-slate-200">
                       <td class="py-1 pr-2">JHASV, Surat</td>
                       <td class="py-1 px-2 text-[var(--text-secondary)]">Class 10</td>
-                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">91% (May 2019)</td>
+                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">May 2019</td>
+                      <td class="py-1 pl-2 text-right text-[var(--text-secondary)]">91%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -118,7 +124,7 @@
               <h2 class="text-lg font-bold text-[var(--text-primary)] sm:w-32 flex-shrink-0">Skills</h2>
               <div class="space-y-2 text-sm flex-1">
                 <div class="flex items-start md:items-center gap-2 flex-col md:flex-row">
-                  <h3 class="font-semibold text-[var(--text-primary)] w-auto md:w-32 flex-shrink-0">Programming Languages</h3>
+                  <h3 class="font-semibold text-[var(--text-primary)] w-auto md:w-32 flex-shrink-0">Languages</h3>
                   <div class="flex flex-wrap gap-1">
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">C/C++</span>
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">JavaScript</span>
@@ -138,7 +144,7 @@
                   </div>
                 </div>
                 <div class="flex items-start md:items-center gap-2 flex-col md:flex-row">
-                  <h3 class="font-semibold text-[var(--text-primary)] w-auto md:w-32 flex-shrink-0">DevOps Tools</h3>
+                  <h3 class="font-semibold text-[var(--text-primary)] w-auto md:w-32 flex-shrink-0">DevOps</h3>
                   <div class="flex flex-wrap gap-1">
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">AWS</span>
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Firebase</span>
@@ -164,14 +170,96 @@
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">AWS EC2</span>
                     <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">tmux</span>
                   </div>
-                  <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-0.5 text-xs">
-                    <li>Solely designed, implemented, and maintained an end-to-end system for scraping and processing startup ideas.</li>
+                  <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-0.5 text-xs mt-2">
+                    <li>
+                      Solely designed, implemented, and maintained an end-to-end
+                      system for scraping and processing startup ideas.
+                    </li>
                     <li>Scraped data from multiple websites using asynchronous Python programming.</li>
                     <li>Processed scraped content via multi-stage LLM pipelines powered by OpenAI, DeepSeek, and Gemini.</li>
                     <li>Deployed and scaled the system across 8 AWS EC2 instances; used tmux for concurrent task management.</li>
-                    <li>Built a fully automated pipeline for idea extraction, filtering, and curation using LLMs.</li>
+                    <li>
+                      Built a fully automated pipeline for idea extraction,
+                      filtering, and curation using LLMs.
+                    </li>
                   </ul>
                 </div>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 bg-white rounded-xl shadow-sm p-6">
+              <h2 class="text-lg font-bold text-[var(--text-primary)] sm:w-32 flex-shrink-0">Projects</h2>
+              <div class="space-y-3 text-sm flex-1">
+                <div class="flex flex-col">
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-semibold text-[var(--text-primary)]">SURVEY PORTAL</h3>
+                    <p class="text-xs text-[var(--text-secondary)]">Dec 2024</p>
+                  </div>
+                  <div class="flex justify-between items-center mb-1">
+                    <p class="text-xs text-[var(--text-secondary)]">Dr. Dweepobotee Brahma</p>
+                    <a class="flex items-center gap-1 hover:text-[var(--primary-color)] transition-colors text-xs text-[var(--text-secondary)]" href="#">
+                      <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+                      </svg>
+                      <span>Github</span>
+                    </a>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mb-1">
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">NextJS</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">TailwindCSS</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Vercel</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">NodeJS</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Firestore</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Firebase functions</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">AWS EC2</span>
+                  </div>
+                  <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-0.5 text-xs mt-2">
+                    <li>Developed a custom survey website to conduct surveys at IIT Jodhpur.</li>
+                    <li>The website handled 270 users without any errors during the survey.</li>
+                    <li>Designed a responsive UI and implemented security measures, such as preventing users from changing or skipping responses to questions.</li>
+                    <li>Created a user-friendly admin panel to manage user access effectively.</li>
+                  </ul>
+                </div>
+                <div class="flex flex-col">
+                  <div class="flex justify-between items-start">
+                    <h3 class="font-semibold text-[var(--text-primary)]">PRACTO SCRAPER</h3>
+                    <p class="text-xs text-[var(--text-secondary)]">Dec 2024</p>
+                  </div>
+                  <div class="flex justify-between items-center mb-1">
+                    <p class="text-xs text-[var(--text-secondary)]">Dr. Dweepobotee Brahma</p>
+                    <a class="flex items-center gap-1 hover:text-[var(--primary-color)] transition-colors text-xs text-[var(--text-secondary)]" href="#">
+                      <svg aria-hidden="true" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path>
+                      </svg>
+                      <span>Github</span>
+                    </a>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mb-1">
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Javascript</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Docker</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Kubernetes</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">Firebase</span>
+                    <span class="inline-block bg-slate-100 text-[var(--text-secondary)] text-xs font-medium px-2 py-0.5 rounded-full">AWS EKS</span>
+                  </div>
+                  <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-0.5 text-xs mt-2">
+                    <li>Scraped data of 6600 doctors in 2 hours. From Practo for research purposes.</li>
+                    <li>Implemented a master-worker architecture to accomplish the task.</li>
+                    <li>Deployed the master using Firebase Functions and the worker using Docker containers on AWS Elastic Kubernetes Service (EKS).</li>
+                    <li>Addressed challenges related to efficiency, code reusability, and race conditions in Firestore.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 bg-white rounded-xl shadow-sm p-6">
+              <h2 class="text-lg font-bold text-[var(--text-primary)] sm:w-32 flex-shrink-0">Achievements</h2>
+              <div class="flex-1">
+                <ul class="list-disc list-inside text-[var(--text-secondary)] space-y-1 text-sm">
+                  <li>Made an extension to fill feedback for all courses in one click.</li>
+                  <li>Discovered auth vulnerability in college ERP system.</li>
+                  <li>Pupil at Codeforces with peak rating of 1369.</li>
+                  <li>Secured 352 Global rank in CodeChef Starters 92 (Div. 2).</li>
+                  <li>Secured 1700 rank in Google Kickstart Round C 2022.</li>
+                  <li>Among top 0.8% in JEE Advanced 2021.</li>
+                </ul>
               </div>
             </div>
           </div>
